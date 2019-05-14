@@ -9,4 +9,12 @@ match("/flexible/payment/:basis_points/:number_of_years/:present_value", { :cont
 
 match("/flexible/random/:low_end/:high_end", { :controller => "calc", :action => "random", :via => "get" })
 
+match("/square/new", { :controller => "calc", :action => "square_form", :via => "get" })
+
+match("/square/results", { :controller => "calc", :action => "square_results", :via => "get" })
+
+match("/square_root/new", { :controller => "calc", :action => "square_root_form", :via => "get" })
+
+match("/square_root/results", { :controller => "calc", :action => "square_root_results", :via => "get" })
+
 end

@@ -38,4 +38,26 @@ class CalcController < ApplicationController
         
         render("flex_templates/random.html.erb")
     end
+    
+    def square_form
+       render("form_templates/square.html.erb") 
+    end
+    
+    def square_results
+        @num = params.fetch("user_number").to_f
+        @square_of_num = @num**2
+        render("form_results/square.html.erb")
+    end
+    
+    def square_root_form
+        render("form_templates/square_root.html.erb")
+    end
+    
+    def square_root_results
+        @num = params.fetch("user_number").to_f
+        @square_root_of_num = @num**0.5
+        render("form_results/square_root.html.erb")
+    end
+    
+  
 end
