@@ -17,4 +17,11 @@ match("/square_root/new", { :controller => "calc", :action => "square_root_form"
 
 match("/square_root/results", { :controller => "calc", :action => "square_root_results", :via => "get" })
 
+match("/payment/new", { :controller => "calc", :action => "payment_form", :via => "get" })
+
+match("/payment/results", { :controller => "calc", :action => "payment_results", :via => "get" })
+
+match("/random/new", { :controller => "calc", :action => "random_form", :via => "get" })
+
+match("/random/results", { :controller => "calc", :action => "random_results", :via => "get" })
 end
