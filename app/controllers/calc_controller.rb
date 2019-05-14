@@ -65,11 +65,11 @@ class CalcController < ApplicationController
     
     def payment_results
         @apr = params.fetch("apr").to_f
-        @r = helpers.number_to_percentage(@apr/100, precision:2)
+        @r = helpers.number_to_percentage(@apr, precision:4)
         @years = params.fetch("years").to_i
         @principal = params.fetch("principal").to_i
-        @pv = helpers.number_to_currency(@principal, precision:0)
-        @payment = (@apr/12/1000*@principal)/(1-((1+@apr/12/10000)**(-(@years*12))))
+        @pv = helpers.number_to_currency(@principal, precision:2)
+        @payment = (@apr/12/100*@principal)/(1-((1+@apr/12/100)**(-(@years*12))))
         @payment_formatted = helpers.number_to_currency(@payment, precision:2)
         render("form_results/payment.html.erb")
     end
