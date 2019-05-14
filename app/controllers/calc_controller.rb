@@ -75,7 +75,7 @@ class CalcController < ApplicationController
     end
     
     def random_form
-        render("form_results/random.html.erb")
+        render("form_templates/random.html.erb")
     end
     
     def random_results
